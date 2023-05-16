@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: app
+    environment:
+      - API_PORT=1323
+    ports:
+      - 8080:80
+    volumes:
+      - type: bind
+        source: ./api
+        target: /app/api
+      - type: bind
+        source: ./client
+        target: /app/client
